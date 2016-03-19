@@ -106,9 +106,17 @@ public class WxMpServiceInstance {
 		indexPage.setType(WxConsts.BUTTON_VIEW);
 		indexPage.setUrl("http://www.justep.com");
 		x5Meuns.add(indexPage);
-
+		
+		List<WxMenuButton> indexsubmenu = new ArrayList<WxMenuButton>();
+		WxMenuButton subPage=new WxMenuButton();
+		subPage.setName("百度");
+		subPage.setType(WxConsts.BUTTON_VIEW);
+		subPage.setUrl("http://www.baidu.com");
+		indexsubmenu.add(subPage);
+		indexPage.setSubButtons(indexsubmenu);
+		
 		WxMenuButton demoPage = new WxMenuButton();
-		demoPage.setName("SzF");
+		demoPage.setName("SYF");
 		demoPage.setType(WxConsts.BUTTON_VIEW);
 		demoPage.setUrl("http://x5.justep.com/x5/UI2/takeout/index.w");
 		x5Meuns.add(demoPage);
@@ -116,7 +124,7 @@ public class WxMpServiceInstance {
 		WxMenuButton takeout = new WxMenuButton();
 		takeout.setName("拍方抓药");
 		takeout.setType(WxConsts.BUTTON_VIEW);
-		takeout.setUrl("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdaceea00f5e0f79d&redirect_uri=http%3A%2F%2Fwww.jianhaola.com%2Fmedicine%2Fv-NBZrI3-zh_CN-%2Fmedicine%2Fcamera.w&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect");
+		takeout.setUrl("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdaceea00f5e0f79d&redirect_uri=http%3A%2F%2Fwww.jianhaola.com%2Fmedicine%2Fv-6b2emi-zh_CN-%2Fmedicine%2Fcamera.w&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect");
 		System.out.println(takeout.getUrl());
 		x5Meuns.add(takeout);
 
@@ -214,7 +222,7 @@ public class WxMpServiceInstance {
 		// TODO 自动生成的方法存根
 		WxMpCustomMessage.WxArticle article = new WxMpCustomMessage.WxArticle();
 		// article.setUrl("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdaceea00f5e0f79d&redirect_uri=http%3A%2F%2F353637syf.imwork.net%2Fx5%2FUI2%2Fv_4677_nol_zh_CNs_d_m%2Fmedicine%2Fpay.w&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect");
-		article.setUrl("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdaceea00f5e0f79d&redirect_uri=http%3A%2F%2Fwww.jianhaola.com%2Fmedicine%2Fv-NBZrI3-zh_CN-%2Fmedicine%2Fpay.w&response_type=code&scope=snsapi_userinfo&state="+orderid+"#wechat_redirect");
+		article.setUrl("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdaceea00f5e0f79d&redirect_uri=http%3A%2F%2Fwww.jianhaola.com%2Fmedicine%2Fv-VV7rY3-zh_CN-%2Fmedicine%2Fpay.w&response_type=code&scope=snsapi_userinfo&state="+orderid+"#wechat_redirect");
 		article.setPicUrl("http://www.jianhaola.com/img/1.jpg");
 		String money = new DecimalFormat("#0.00").format(Float.parseFloat(medprice) + Float.parseFloat(transportprice));
 		article.setDescription("药费：" + medprice + "  运费：" + transportprice + "  合计：" + money);
